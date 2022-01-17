@@ -1,0 +1,11 @@
+marketing.group.admin:
+  title: 'Marketing'
+  route_name: system.admin_config_marketing
+  parent: system.admin_config
+  description: 'Marketing Module Configuration'
+  weight: -999
+phone-tracking.management:
+  title: 'Marketing-phone-Tracking-Management'
+  route_name: mkt_phone_tracking.settings_form
+  description: 'Configure Phone Tracking Module'
+  parent: marketing.group.admin

@@ -1,0 +1,16 @@
+phone_tracking.setting_tab:
+  route_name: mkt_phone_tracking.settings_form
+  title: Settings
+  base_route: mkt-phone-tracking.management
+phone_tracking.api_setting_tab:
+  route_name: mkt_phone_tracking.api_settings_form
+  title: Api Settings
+  base_route: mkt-phone-tracking.management
+phone_tracking.iframe_tab:
+  route_name: mkt_phone_tracking.iframe_settings
+  title: Iframe Settings
+  base_route: mkt-phone-tracking.management
+phone_tracking.ip_tab:
+  route_name: mkt_phone_tracking.ip_settings
+  title: Ip Settings
+  base_route: mkt-phone-tracking.management

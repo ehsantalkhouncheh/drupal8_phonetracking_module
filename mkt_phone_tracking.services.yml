@@ -1,0 +1,5 @@
+services:
+  mkt_phone_tracking_update_internal_ip_list.service:
+    class: Drupal\mkt_phone_tracking\Controller\PhoneTrackingIpCheckerController
+    arguments:
+      - '@request_stack'

@@ -1,0 +1,46 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for Marketing Phone Tracking Module module.
+ *
+ * @DCG
+ * This file is no longer required in Drupal 8.
+ * @see https://www.drupal.org/node/2217931
+ */
+
+use Drupal\mkt_phone_tracking\Controller\PhoneTrackingController;
+use Drupal\mkt_phone_tracking\Controller\PhoneTrackingIframeController;
+
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function mkt_phone_tracking_page_attachments_alter(array &$page) {
+  if (ENVIRONMENT != 'DEV') {
+    $page['#attached']['library'][] = 'mkt_phone_tracking/mkt_phone_tracking';
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ *
+ * @param $variables
+ *
+ * @throws \Exception
+ * @throws \GuzzleHttp\Exception\GuzzleException
+ */
+function mkt_phone_tracking_preprocess_page(&$variables) {
+  $moduleHandler = Drupal::service('module_handler');
+  /**
+   *  check if the user is in the admin area or not
+   */
+  $is_admin = \Drupal::service('router.admin_context')->isAdminRoute();
+
+  if ($moduleHandler->moduleExists('mkt_phone_tracking') && ($is_admin === FALSE)) {
+    if (getenv('ENVIRONMENT') != 'DEV') {
+      $variables['page']['phone'] = PhoneTrackingController::getNumber();
+    }
+  }
+}
+

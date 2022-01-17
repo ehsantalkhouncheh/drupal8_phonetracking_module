@@ -1,0 +1,7 @@
+mkt_phone_tracking:
+  version: 1.0
+  js:
+    js/phonetracking.js: { }
+  dependencies:
+    - core/jquery
+    - core/drupal

@@ -1,0 +1,8 @@
+name: mkt_phone_tracking
+type: module
+description: This module create ability for d8 to use phontracking service (Laravel or old legacy)
+package: Markting
+core: 8.x
+core_version_requirement: ^8 || ^9
+dependencies:
+  - mkt_host_manager

@@ -1,0 +1,58 @@
+mkt_phone_tracking.settings_form:
+  path: '/admin/config/system/mkt-phone-tracking'
+  defaults:
+    _title: 'mkt_phone_tracking settings'
+    _form: 'Drupal\mkt_phone_tracking\Form\SettingsForm'
+  requirements:
+    _permission: 'administer mkt_phone_tracking configuration'
+
+mkt_phone_tracking.api_settings_form:
+  path: '/admin/config/system/mkt-phone-tracking/api-settings'
+  defaults:
+    _title: 'mkt_phone_tracking settings'
+    _form: 'Drupal\mkt_phone_tracking\Form\ApiSettingsForm'
+  requirements:
+    _permission: 'administer mkt_phone_tracking configuration'
+
+mkt_phone_tracking.ip_settings:
+  path: '/admin/config/system/mkt-phone-tracking/ip-settings'
+  defaults:
+    _title: 'mkt_phone_tracking range ip'
+    _form: 'Drupal\mkt_phone_tracking\Form\IpRangeSettingsForm'
+  requirements:
+    _permission: 'administer mkt_phone_tracking configuration'
+
+mkt_phone_tracking.iframe_settings:
+  path: '/admin/config/system/mkt-phone-tracking/iframe-settings'
+  defaults:
+    _title: 'mkt_phone_tracking range iframe'
+    _form: 'Drupal\mkt_phone_tracking\Form\IframeSettingsForm'
+  requirements:
+    _permission: 'administer mkt_phone_tracking configuration'
+
+mkt_phone_tracking.refreshNumber:
+  path: 'phoneTracking/refreshNumber.json'
+  defaults: { _controller: '\Drupal\mkt_phone_tracking\Controller\PhoneTrackingController::refreshNumber' }
+  methods: [ GET ]
+  requirements:
+    _access: 'TRUE'
+mkt_phone_tracking.callReceived:
+  path: 'phoneTracking/callReceived.json'
+  defaults: { _controller: '\Drupal\mkt_phone_tracking\Controller\PhoneTrackingController::callReceived' }
+  methods: [ POST ]
+  requirements:
+    _access: 'TRUE'
+mkt_phone_tracking.callFinished:
+  path: 'phoneTracking/callFinished.json'
+  defaults: { _controller: '\Drupal\mkt_phone_tracking\Controller\PhoneTrackingController::callFinished' }
+  methods: [ POST ]
+  requirements:
+    _access: 'TRUE'
+mkt_phone_tracking.update_ip_range:
+  path: '/phoneTracking/updateIpRange'
+  defaults:
+    _title: 'update internal ip range for Phone tracking'
+    _controller: '\Drupal\mkt_phone_tracking\Controller\PhoneTrackingIpCheckerController::ProcessUpdate'
+  methods: [ POST ]
+  requirements:
+    _access: 'TRUE'
