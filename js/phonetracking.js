@@ -24,5 +24,3 @@
     }
   };
 })(jQuery, Drupal);
-
-
